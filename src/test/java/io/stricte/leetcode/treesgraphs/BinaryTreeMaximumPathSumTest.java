@@ -8,7 +8,7 @@ class BinaryTreeMaximumPathSumTest {
   @Test
   void test() {
 
-    BinaryTreeMaximumPathSum maxSum = new BinaryTreeMaximumPathSum();
+    var maxSum = new BinaryTreeMaximumPathSum();
 
     //TreeNode node = new TreeNode(1, new TreeNode(2), new TreeNode(3));
     TreeNode node = new TreeNode(-10,
