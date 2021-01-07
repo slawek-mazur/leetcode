@@ -9,7 +9,7 @@ public class DetectPatternOfLengthMRepeatedKOrMoreTimes {
 
   public boolean containsPattern(int[] arr, int m, int k) {
     for (int i = 0, j = i + m, count = 0; j < arr.length; ++i, ++j) {
-      if (arr[i] == arr[i + m]) {
+      if (arr[i] == arr[j]) {
         count++;
       } else {
         count = 0;
