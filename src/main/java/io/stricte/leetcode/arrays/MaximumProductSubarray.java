@@ -1,5 +1,10 @@
 package io.stricte.leetcode.arrays;
 
+// https://leetcode.com/problems/maximum-product-subarray/
+/*
+Runtime: 2 ms, faster than 31.25% of Java online submissions for Maximum Product Subarray.
+Memory Usage: 39.9 MB, less than 5.05% of Java online submissions for Maximum Product Subarray.
+*/
 public class MaximumProductSubarray {
 
   public int maxProduct(int[] nums) {
@@ -16,28 +21,5 @@ public class MaximumProductSubarray {
       res = Math.max(res, max);
     }
     return res;
-
-    /*
-    if (nums.length == 0) {
-      return 0;
-    }
-    if (nums.length == 1) {
-      return nums[0];
-    }
-    int lastMax = nums[0];
-    int lastMmin = nums[0];
-    int max = nums[0];
-    for (int i = 1; i < nums.length; i++) {
-      int localMax = Math.max(lastMax * nums[i], lastMmin * nums[i]);
-      localMax = Math.max(localMax, nums[i]);
-      lastMmin = Math.min(lastMmin * nums[i], lastMax * nums[i]);
-      lastMmin = Math.min(lastMmin, nums[i]);
-      max = Math.max(max, localMax);
-      lastMax = localMax;
-
-    }
-    return max;
-
-     */
   }
 }
