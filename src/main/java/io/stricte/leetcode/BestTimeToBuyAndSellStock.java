@@ -1,5 +1,10 @@
 package io.stricte.leetcode;
 
+// https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+/*
+Runtime: 3 ms, faster than 23.86% of Java online submissions for Best Time to Buy and Sell Stock.
+Memory Usage: 105.1 MB, less than 7.40% of Java online submissions for Best Time to Buy and Sell Stock.
+*/
 public class BestTimeToBuyAndSellStock {
 
   public int maxProfit(int[] prices) {
