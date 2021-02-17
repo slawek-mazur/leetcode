@@ -14,6 +14,10 @@ class DuplicateZerosTest {
     zeros.duplicateZeros(nums4);
     assertThat(nums4).containsExactly(0, 0, 1, 7, 6, 0, 0, 2);
 
+    int[] nums5 = {1, 0, 2, 3};
+    zeros.duplicateZeros(nums5);
+    assertThat(nums5).containsExactly(1, 0, 0, 2);
+
     int[] nums1 = {1, 0, 2, 3, 0, 4, 5, 0};
     zeros.duplicateZeros(nums1);
     assertThat(nums1).containsExactly(1, 0, 0, 2, 3, 0, 0, 4);

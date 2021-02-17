@@ -1,7 +1,6 @@
 package io.stricte.leetcode.arrays;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.Arrays;
 
 // https://leetcode.com/problems/duplicate-zeros/
 /*
@@ -12,6 +11,25 @@ public class DuplicateZeros {
 
   public void duplicateZeros(int[] arr) {
 
+    // 1, 0, 2, 3
+    // 1, 0, 0, 2, 3
+    int n = arr.length, j = n + (int) Arrays.stream(arr).filter(i -> i == 0).count() - 1;
+    for (int i = arr.length - 1; i < j; i--, j--) {
+      if (arr[i] != 0) {
+        if (j < arr.length) {
+          arr[j] = arr[i];
+        }
+      } else {
+        if (j < arr.length) {
+          arr[j] = arr[i];
+        }
+        j--;
+        if (j < arr.length) {
+          arr[j] = arr[i]; //copy twice when hit '0'
+        }
+      }
+    }
+    /*
     Queue<Integer> stack = new LinkedList<>();
     for (int i = 0; i < arr.length; i++) {
       stack.add(arr[i]);
@@ -20,5 +38,6 @@ public class DuplicateZeros {
       }
       arr[i] = stack.remove();
     }
+    */
   }
 }
