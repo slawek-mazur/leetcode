@@ -11,21 +11,22 @@ public class DuplicateZeros {
 
   public void duplicateZeros(int[] arr) {
 
+    // 1, 0, 0, 0
+    // 1, 0, 0, 0, 0, 0, 0
+    //--------------------------
     // 1, 0, 2, 3
     // 1, 0, 0, 2, 3
+    //--------------------------
+    // 1, 0, 2, 0, 3, 4, 5
+    // 1, 0, 0, 2, 0, 0, 3, 4, 5
     int n = arr.length, j = n + (int) Arrays.stream(arr).filter(i -> i == 0).count() - 1;
     for (int i = arr.length - 1; i < j; i--, j--) {
-      if (arr[i] != 0) {
-        if (j < arr.length) {
+      if (j < arr.length) {
+        arr[j] = arr[i];
+      }
+      if (arr[i] == 0) {
+        if (--j < arr.length) {
           arr[j] = arr[i];
-        }
-      } else {
-        if (j < arr.length) {
-          arr[j] = arr[i];
-        }
-        j--;
-        if (j < arr.length) {
-          arr[j] = arr[i]; //copy twice when hit '0'
         }
       }
     }
