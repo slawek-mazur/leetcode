@@ -1,9 +1,5 @@
 package io.stricte.leetcode.treesgraphs;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
-
 // https://leetcode.com/problems/minimum-distance-between-bst-nodes/
 /*
 Runtime: 1 ms, faster than 22.77% of Java online submissions for Minimum Distance Between BST Nodes.
@@ -11,6 +7,29 @@ Memory Usage: 36.6 MB, less than 51.00% of Java online submissions for Minimum D
 */
 public class MinimumDistanceBetweenBSTNodes {
 
+  private int min;
+  private int prev;
+
+  public int minDiffInBST(TreeNode root) {
+    prev = -1;
+    min = Integer.MAX_VALUE;
+    dfs(root);
+    return min;
+  }
+
+  private void dfs(TreeNode node) {
+    if (node == null) {
+      return;
+    }
+    dfs(node.left);
+    if (prev != -1) {
+      min = Math.min(min, Math.abs(prev - node.val));
+    }
+    prev = node.val;
+    dfs(node.right);
+  }
+
+  /*
   public int minDiffInBST(TreeNode root) {
     var list = new ArrayList<Integer>();
     var q = new LinkedList<TreeNode>();
@@ -33,6 +52,7 @@ public class MinimumDistanceBetweenBSTNodes {
     }
     return min;
   }
+  */
 
   static class TreeNode {
 
